@@ -21,10 +21,10 @@ import butterknife.ButterKnife;
 
 public class RestaurantListAdapter extends RecyclerView.Adapter<RestaurantListAdapter.RestaurantViewHolder> {
 
-    private List<Business> mRestaurants = new ArrayList<>();
+    private List<Business> mRestaurants;
     private Context mContext;
 
-    public RestaurantListAdapter(Context context, ArrayList<Business> restaurants) {
+    public RestaurantListAdapter(Context context, List<Business> restaurants) {
         mContext = context;
         mRestaurants = restaurants;
     }
