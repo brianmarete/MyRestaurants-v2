@@ -1,13 +1,13 @@
 package com.moringaschool.myrestaurants.ui;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.moringaschool.myrestaurants.R;
 
@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             String location = mLocationEditText.getText().toString();
             Toast.makeText(MainActivity.this, location, Toast.LENGTH_SHORT).show();
 
-            Intent intent = new Intent(MainActivity.this, RestaurantsActivity.class);
+            Intent intent = new Intent(MainActivity.this, RestaurantListActivity.class);
             intent.putExtra("location", location);
             startActivity(intent);
         }

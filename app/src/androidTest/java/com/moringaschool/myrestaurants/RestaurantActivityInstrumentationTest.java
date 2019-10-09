@@ -5,7 +5,7 @@ import android.view.View;
 import androidx.test.rule.ActivityTestRule;
 import androidx.test.runner.AndroidJUnit4;
 
-import com.moringaschool.myrestaurants.ui.RestaurantsActivity;
+import com.moringaschool.myrestaurants.ui.RestaurantListActivity;
 
 import org.junit.Rule;
 import org.junit.Test;
@@ -25,15 +25,15 @@ import static org.hamcrest.core.IsNot.not;
 public class RestaurantActivityInstrumentationTest {
 
     @Rule
-    public ActivityTestRule<RestaurantsActivity> activityRule =
-            new ActivityTestRule<>(RestaurantsActivity.class);
+    public ActivityTestRule<RestaurantListActivity> activityRule =
+            new ActivityTestRule<>(RestaurantListActivity.class);
 
     @Test
     public void listItemClickDisplaysToastWithCorrectRestaurant() {
         View activityDecorView = activityRule.getActivity().getWindow().getDecorView();
         String restaurantName = "Mi Mero Mole";
         onData(anything())
-                .inAdapterView(withId(R.id.listView))
+                .inAdapterView(withId(R.id.recyclerView))
                 .atPosition(0)
                 .perform(click());
         onView(withText(restaurantName)).inRoot(withDecorView(not(activityDecorView)))
